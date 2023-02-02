@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 15:31:52 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 08:30:34 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 09:03:48 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 09:13:37 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief  met a 0 les n premiers octets du bloc pointe par s
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*dest;
-	size_t			i;
+/// @brief renvoie un pointeur sur la derniere occurence
+/// @brief du caractere c dans la chaine s
 
-	dest = s;
-	i = 0;
-	while (i++ < n)
-		*dest++ = 0;
+char	*ft_strrchr(char const *s, int c)
+{
+	char	*last;
+	char	find;
+	int		i;
+
+	last = (char *)s;
+	find = (char)c;
+	i = ft_strlen(s);
+	while (i > 0)
+	{
+		if (last[i] == find)
+			return (last + i);
+		i--;
+	}
+	if (last[i] == find)
+		return (last);
+	return (0);
 }

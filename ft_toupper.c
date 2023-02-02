@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 15:31:52 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 08:30:34 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 08:31:58 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 08:41:55 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief  met a 0 les n premiers octets du bloc pointe par s
-void	ft_bzero(void *s, size_t n)
+/// @brief teste s'il s'agit d'une lettre minuscule
+int	ft_islower(int c)
 {
-	unsigned char	*dest;
-	size_t			i;
+	return (c >= 97 && c <= 122);
+}
 
-	dest = s;
-	i = 0;
-	while (i++ < n)
-		*dest++ = 0;
+/// @brief convertit la lettre c en majuscule 
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		return (c - 32);
+	return (c);
 }
