@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                      :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
+/*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:32:21 by vfuster-          #+#    #+#             */
-/*   Updated: 2022/12/22 11:46:14 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 17:19:29 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 17:19:32 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ static char	*word_dup(char const *str, int start, int finish)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	int		start;
 	char	**split;
+	size_t	i;
+	size_t	j;
+	int		start;
 
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !split)

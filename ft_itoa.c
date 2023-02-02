@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
+/*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:18:21 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/01/30 17:15:04 by virginie         ###   ########.fr       */
+/*   Created: 2023/02/02 17:14:28 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 17:14:32 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ static unsigned int	ft_number_size(int number)
 
 char	*ft_itoa(int n)
 {
-	char	*string;
-	unsigned int		number;
-	unsigned int		len;
+	char			*string;
+	unsigned int	number;
+	unsigned int	len;
 
 	number = 0;
 	len = ft_number_size(n);
-	string = (char *)malloc(sizeof(char) * (len + 1 ));
+	string = (char *)malloc(sizeof(char) * (len + 1));
 	if (string == NULL)
 		return (NULL);
 	if (number < 0)
 	{
 		string[0] = '-';
-		number = - n;
+		number = -n;
 	}
 	else
 		number = n;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
+/*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:26:41 by vfuster-          #+#    #+#             */
-/*   Updated: 2022/12/22 11:26:42 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 17:18:16 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 17:18:18 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

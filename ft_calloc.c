@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
+/*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 13:52:45 by virginie          #+#    #+#             */
-/*   Updated: 2023/01/31 13:53:03 by virginie         ###   ########.fr       */
+/*   Created: 2023/02/02 17:13:28 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 17:13:37 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
