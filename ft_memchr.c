@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 09:53:16 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:53:24 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 09:59:21 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 11:36:47 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/// @brief examine les 'n' 1ers octets de la zone memoire pointee par s
+/// @brief a la recherche du caractere 'c'.
+/// @brief Le 1er octet correspondant a 'c' arrete l'operation
+/// @return un pointeur sur l'octet correspondant ou NULL
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*new_dest;
-	unsigned char	*new_src;
-	size_t			i;
-
-	if (!dest && !src)
-		return (0);
-	new_dest = dest;
-	new_src = (unsigned char *)src;
-	i = 0;
-	while (i++ < n)
-		*new_dest++ = *new_src++;
-	return (dest);
+	while (n--)
+	{
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((void *)s);
+		s++;
+	}
+	return (0);
 }

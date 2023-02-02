@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 07:57:11 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 08:20:23 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:09:48 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 /// @brief ajoute dst a src 
 /// @return longueur de la chaine creee
+size_t	ft_strlen(char const *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 size_t	ft_strlcat(char *dst, char const *src, size_t size)
 {
 	size_t	i;

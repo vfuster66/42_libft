@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 09:53:16 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:53:24 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 12:15:39 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 13:41:51 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_atoi(char const *nptr)
 {
-	unsigned char	*new_dest;
-	unsigned char	*new_src;
-	size_t			i;
+	size_t	i;
+	long	number;
+	long	sign;
 
-	if (!dest && !src)
-		return (0);
-	new_dest = dest;
-	new_src = (unsigned char *)src;
 	i = 0;
-	while (i++ < n)
-		*new_dest++ = *new_src++;
-	return (dest);
+	sign = 1;
+	number = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+	{
+		i++;
+	}
+	while (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+		{
+			sign = -1;
+		}
+		i++;
+	}
+	while (nptr[i] != '\0' && nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		number = number * 10 + nptr[i] - 48;
+		i++;
+	}
+	return (number * sign);
 }

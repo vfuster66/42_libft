@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vfuster- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 15:46:26 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/01 16:19:24 by vfuster-         ###   ########.fr       */
+/*   Created: 2023/02/02 09:54:14 by vfuster-          #+#    #+#             */
+/*   Updated: 2023/02/02 11:35:16 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*new_dest;
 	unsigned char	*new_src;
