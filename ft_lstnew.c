@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:29:18 by vfuster-          #+#    #+#             */
-/*   Updated: 2022/12/22 11:29:20 by vfuster-         ###   ########.fr       */
+/*   Created: 2022/12/22 11:23:07 by vfuster-          #+#    #+#             */
+/*   Updated: 2022/12/22 11:23:08 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *s)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	i;
-	char	*str;
+	t_list	*elt;
 
-	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (str == NULL)
+	elt = (t_list*)malloc(sizeof(*elt));
+	if (elt == NULL)
 		return (NULL);
-	while (s[i])
+	if (content == NULL)
 	{
-		str[i] = s[i];
-		i++;
+		elt->content = NULL;
+		elt->content_size = 0;
 	}
-	str[i] = '\0';
-	return (str);
+	else
+	{
+		elt->content = malloc(content_size);
+		if (elt->content == NULL)
+		{
+			free(elt);
+			return(NULL);
+		}
+		ft_memcpy(elt->content, content, content_size);
+		elt->content_size = content_size;
+	}
+	elt->next = NULL;
+	return(elt);
 }
