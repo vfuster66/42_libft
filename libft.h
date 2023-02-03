@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:55:17 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:55:52 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:37:37 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,14 @@ void	ft_putendl_fd(char s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s, size_t n);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstdelone(t_list **lst, void (*del)(void *, size_t));
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list	*ft_lstnew(void const *content, size_t content_size);
+int	ft_lstsize(t_list *lst)
 
 #endif

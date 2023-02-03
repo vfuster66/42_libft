@@ -6,14 +6,14 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 08:31:58 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 08:41:55 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:36:33 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /// @brief teste s'il s'agit d'une lettre minuscule
-int	ft_islower(int c)
+static int	ft_islower(int c)
 {
 	return (c >= 97 && c <= 122);
 }

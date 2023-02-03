@@ -6,27 +6,12 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:41:19 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 12:13:32 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:31:14 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-/// @brief 
-/// @param big 
-/// @param little 
-/// @param len 
-/// @return 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ss1;

@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:28 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:14:32 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:38:22 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ char	*ft_itoa(int n)
 	string = (char *)malloc(sizeof(char) * (len + 1));
 	if (string == NULL)
 		return (NULL);
-	if (number < 0)
+	if (n < 0)
 	{
 		string[0] = '-';
-		number = -n;
+		n = -n;
 	}
 	else
 		number = n;

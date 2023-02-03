@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:03:48 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 12:11:35 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:20:33 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 
 /// @brief renvoie un pointeur sur la derniere occurence
 /// @brief du caractere c dans la chaine s
-size_t	ft_strlen(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strrchr(char const *s, int c)
 {
 	char	*last;

@@ -6,38 +6,52 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:13:00 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:13:09 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 10:15:49 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int	ft_get_start(const char *s)
 {
-	char	*result;
-	size_t	start;
-	size_t	end;
-	size_t	i;
-	size_t	j;
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+static int	ft_get_end(const char *s)
+{
+	int	i;
+
+	i = ft_strlen(s) - 1;
+	while (i > 0)
+	{
+		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
+			return (i);
+		i--;
+	}
+	return (-1);
+}
+
+char	*ft_strtrim(char const *s, char const *set)
+{
+	int		start;
+	int		end;
+	char	*res;
 
 	if (!s)
 		return (NULL);
-	start = 0;
-	end = ft_strlen(s) - 1;
-	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
-		start++;
-	while (end > start && (s[end] == ' ' || s[end] == '\n' || s[end] == '\t'))
-		end--;
-	result = (char *)malloc((end - start + 2) * sizeof(char));
-	if (!result)
-		return (NULL);
-	while (i <= end)
-	{
-		i = start;
-		i++;
-		j++;
-	}
-	result[j] = s[i];
-	result[j] = '\0';
-	return (result);
+	start = ft_get_start(s);
+	end = ft_get_end(s);
+	if (end == -1 || start == -1)
+		return (ft_strnew(0));
+	res = ft_substr(s, start, end - start + 1);
+	return (res);
 }
