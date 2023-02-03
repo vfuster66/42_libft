@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:15:39 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 10:40:59 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 13:04:29 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,23 @@ int	ft_atoi(char const *nptr)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n' ||
+		nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 	{
 		i++;
 	}
-	while (nptr[i] == '+' || nptr[i] == '-')
+	if (nptr[i] == '-')
 	{
-		if (nptr[i] == '-')
-		{
-			sign = -1;
-		}
+		sign = -1;
 		i++;
 	}
-	while (nptr[i] != '\0' && nptr[i] >= 48 && nptr[i] <= 57)
+	else if (nptr[i] == '+')
 	{
-		result = result * 10 + nptr[i] - 48;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (result * sign);

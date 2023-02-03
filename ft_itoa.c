@@ -6,13 +6,13 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:28 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 08:38:22 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:42:30 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_number_size(int number)
+static unsigned int	ft_calc_lenght(int number, int sign)
 {
 	unsigned int	len;
 
@@ -20,41 +20,48 @@ static unsigned int	ft_number_size(int number)
 	if (number == 0)
 		return (1);
 	if (number < 0)
-		len += 1;
+		len = 1;
 	while (number != 0)
 	{
 		number /= 10;
 		len++;
 	}
+	if (sign == -1)
+		len++;
 	return (len);
+}
+
+static void	ft_convert_number(char *string, int number, int len, int sign)
+{
+	while (len--)
+	{
+		string[len] = number % 10 * sign + '0';
+		number /= 10;
+	}
+	if (sign == -1)
+		string[0] = '-';
 }
 
 char	*ft_itoa(int n)
 {
 	char			*string;
 	unsigned int	number;
-	unsigned int	len;
+	int	len;
+	int	sign;
 
-	number = 0;
-	len = ft_number_size(n);
-	string = (char *)malloc(sizeof(char) * (len + 1));
-	if (string == NULL)
-		return (NULL);
+	number = n;
 	if (n < 0)
 	{
-		string[0] = '-';
-		n = -n;
+		sign = -1;
+		number = -n;
 	}
 	else
-		number = n;
-	if (number == 0)
-		string[0] = '\0';
+		sign = 1;
+	len = ft_calc_lenght(number, sign);
+	string = (char *)malloc(sizeof(char) * (len + 1));
+	if (!string)
+		return (NULL);
 	string[len] = '\0';
-	while (n != 0)
-	{
-		string[len - 1] = (n % 10) + '0';
-		n = n / 10;
-		len --;
-	}
-	return (string);
+	ft_convert_number(string, number, len, sign);
+	return (string);	
 }
