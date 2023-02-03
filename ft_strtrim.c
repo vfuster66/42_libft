@@ -6,52 +6,30 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:13:00 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 10:15:49 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/03 11:11:24 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_get_start(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
-static int	ft_get_end(const char *s)
-{
-	int	i;
-
-	i = ft_strlen(s) - 1;
-	while (i > 0)
-	{
-		if (s[i] != ' ' && s[i] != '\t' && s[i] != '\n')
-			return (i);
-		i--;
-	}
-	return (-1);
-}
-
 char	*ft_strtrim(char const *s, char const *set)
 {
-	int		start;
-	int		end;
-	char	*res;
+	size_t	front;
+	size_t	rear;
+	char		*str;
 
-	if (!s)
-		return (NULL);
-	start = ft_get_start(s);
-	end = ft_get_end(s);
-	if (end == -1 || start == -1)
-		return (ft_strnew(0));
-	res = ft_substr(s, start, end - start + 1);
-	return (res);
+	str = 0;
+	if(s != 0 && set != 0)
+	{
+		front = 0;
+		rear = ft_strlen(s);
+		while (s[front] && ft_strchr(set, s[front]))
+			front++;
+		while (s[rear - 1] && ft_strchr(set, s[rear - 1]) && rear > front)
+			rear--;
+		str = (char *)malloc(sizeof(char) * (rear - front +1));
+		if (str)
+			ft_strlcpy(str, &s[front], rear - front +1);
+	}
+	return (str);
 }
