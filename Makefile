@@ -6,7 +6,7 @@
 #    By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 08:16:55 by vfuster-          #+#    #+#              #
-#    Updated: 2023/02/03 08:17:13 by vfuster-         ###   ########.fr        #
+#    Updated: 2023/02/03 16:28:27 by vfuster-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ ft_strncmp.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strtrim.c \
+ft_substr.c \
 ft_tolower.c \
 ft_toupper.c \
 ft_putchar_fd.c \
