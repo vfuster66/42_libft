@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:15:39 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 15:55:16 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:03:21 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,22 @@
 /// @return le resultat de la conversion 
 int	ft_atoi(char const *nptr)
 {
-	int	i;
+	int		i;
 	long	number;
 	long	sign;
 
 	i = 0;
 	sign = 1;
 	number = 0;
-	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n' ||
-			nptr[i] == '\f' || nptr[i] == '\v' || nptr[i] == '\r')
-	{
+	while (nptr[i] == ' ' || ((9 <= nptr[i]) && (nptr[i] <= 13)))
 		i++;
-	}
 	if (nptr[i] == '-')
-		{
-			sign = -1;
-			i++;
-		}
-	else if (nptr[i] == '+')
 	{
+		sign = -1;
 		i++;
 	}
+	else if (nptr[i] == '+')
+		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		number = number * 10 + nptr[i] - '0';

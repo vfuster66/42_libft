@@ -6,64 +6,62 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:28 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 15:11:20 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:57:30 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_calc_lenght(int number, int sign)
+static int	get_size(int n)
 {
-	unsigned int	len;
+	int	size;
 
-	len = 0;
-	if (number == 0)
-		return (1);
-	if (sign == -1)
-		len = 1;
-	while (number != 0)
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
 	{
-		number /= 10;
-		len++;
+		n = n / 10;
+		size++;
 	}
-	return (len);
+	return (size);
 }
 
-static void	ft_convert_number(char *string, int number, int len, int sign)
+static void	fill_res(int size, int offset, int n, char *res)
 {
-	int	i;
-
-	i = 0;
-	if (sign == -1)
-		string[i++] = '-';
-	while (i < len)
+	while (size > offset)
 	{
-		string[i++] = number % 10 * sign + '0';
-		number /= 10;
+		res[size - 1] = n % 10 + '0';
+		n = n / 10;
+		size --;
 	}
-	string[i] = '\0';
 }
 
 char	*ft_itoa(int n)
 {
-	char			*string;
-	unsigned int	number;
-	int	len;
-	int	sign;
+	int		offset;
+	int		size;
+	char	*res;
 
-	number = n;
+	offset = 0;
+	size = get_size(n);
+	res = (char *)malloc(sizeof(char) * size + 1);
+	if (!res)
+		return (0);
+	if (n == -2147483648)
+	{
+		res[0] = '-';
+		res[1] = '2';
+		n = 147483648;
+		offset = 2;
+	}
 	if (n < 0)
 	{
-		sign = -1;
-		number = -n;
+		res[0] = '-';
+		offset = 1;
+		n = -n;
 	}
-	else
-		sign = 1;
-	len = ft_calc_lenght(number, sign);
-	string = (char *)malloc(sizeof(char) * (len + 1));
-	if (!string)
-		return (NULL);
-	string[len] = '\0';
-	ft_convert_number(string, number, len, sign);
-	return (string);	
+	fill_res(size, offset, n, res);
+	res[size] = '\0';
+	return (res);
 }

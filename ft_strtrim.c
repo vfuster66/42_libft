@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:13:00 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 11:11:24 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:52:04 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	front;
 	size_t	rear;
-	char		*str;
+	char	*str;
 
 	str = 0;
-	if(s != 0 && set != 0)
+	if (s != 0 && set != 0)
 	{
 		front = 0;
 		rear = ft_strlen(s);

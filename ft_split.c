@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:19:29 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:19:32 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 09:22:55 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 static int	count_words(char const *str, char c)
 {
 	int	i;
-	int	trigger;
+	int	count;
 
 	i = 0;
-	trigger = 0;
+	count = 0;
 	while (*str)
 	{
-		if (*str != c && trigger == 0)
+		if (*str != c && count == 0)
 		{
-			trigger = 1;
+			count = 1;
 			i++;
 		}
 		else if (*str == c)
-			trigger = 0;
+			count = 0;
 		str++;
 	}
 	return (i);
