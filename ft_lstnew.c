@@ -6,31 +6,20 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:17:15 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 16:54:55 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 08:09:19 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
 	list = (t_list *)malloc(sizeof(t_list));
 	if (!list)
-		return (0);
-	if (content == NULL)
-	{
-		list->content = NULL;
-		list->content_size = 0;
+		return (NULL);
+		list->content = content;
 		list->next = NULL;
 		return (list);
-	}
-	list->content = malloc(content_size);
-	if (!list->content)
-		return (0);
-	ft_memmove(list->content, content, content_size);
-	list->content_size = content_size;
-	list->next = NULL;
-	return (list);
 }
