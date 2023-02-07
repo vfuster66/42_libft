@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:20:13 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:49:43 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:44:41 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 /// @brief a la chaine s2
 int	ft_strncmp(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-
 	if (n == 0)
 		return (0);
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
-		i++;
-	if (i == n)
-		i--;
-	return (s1[i] - s2[i]);
+	while ((unsigned char)*s1 == (unsigned char)*s2 && *s1 && n-- > 1)
+	{
+		s1++;
+		s2++;
+	}
+	if ((unsigned char)*s1 == (unsigned char)*s2)
+		return (0);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }	

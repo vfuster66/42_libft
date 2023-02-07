@@ -5,87 +5,53 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/03 08:16:55 by vfuster-          #+#    #+#              #
-#    Updated: 2023/02/06 11:24:59 by vfuster-         ###   ########.fr        #
+#    Created: 2023/02/06 17:29:07 by vfuster-          #+#    #+#              #
+#    Updated: 2023/02/07 09:35:42 by vfuster-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OBJS_A = $(SRC_A:.c=.o)
-OBJS_B = $(SRC_B:.c=.o)
-SRC_A	= $(addprefix $(SRC_DIR)/, \
-ft_atoi.c \
-ft_bzero.c \
-ft_calloc.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isprint.c \
-ft_itoa.c \
-ft_memchr.c \
-ft_memcmp.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c \
-ft_split.c \
-ft_strchr.c \
-ft_strdup.c \
-ft_striteri.c \
-ft_strjoin.c \
-ft_strlcat.c \
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strmapi.c \
-ft_strncmp.c \
-ft_strnstr.c \
-ft_strrchr.c \
-ft_strtrim.c \
-ft_substr.c \
-ft_tolower.c \
-ft_toupper.c \
-ft_putchar_fd.c \
-ft_putstr_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c \
-)
-SRC_B	= $(addprefix $(SRC_DIR)/, \
-ft_lstnew_bonus.c \
-ft_lstadd_front_bonus.c \
-ft_lstsize_bonus.c \
-ft_lstlast_bonus.c \
-ft_lstadd_back_bonus.c \
-ft_lstdelone_bonus.c \
-ft_lstclear_bonus.c \
-ft_lstiter_bonus.c \
-ft_lstmap_bonus.c \
-)
-SRC_DIR	= ./
-INC_DIR	= ./
-OUT	= libft.a
-CC = gcc
-AR = ar
-FLAGS = -Wall -Wextra -Werror
-HEADER_FILE	= libft.h
+SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
+				ft_isalpha.c ft_isascii.c ft_isdigit.c \
+				ft_isprint.c ft_itoa.c ft_memchr.c \
+				ft_memcmp.c ft_memcpy.c ft_memmove.c \
+				ft_memset.c ft_split.c ft_strchr.c \
+				ft_strdup.c ft_striteri.c ft_strjoin.c \
+				ft_strlcat.c ft_strlcpy.c ft_strlen.c \
+				ft_strmapi.c ft_strncmp.c ft_strnstr.c \
+				ft_strrchr.c ft_strtrim.c ft_substr.c \
+				ft_tolower.c ft_toupper.c ft_putchar_fd.c \
+				ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-all: $(OUT)
+OBJS		= $(SRCS:.c=.o)
 
-$(NAME) : $(OBJS_A) $(AR) $(NAME) $(OBJS_A) ranlib $(NAME)
+BONUS		=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+			ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-$(OUT) : $(OBJS_A)
-	$(AR) -rcs $(OUT) $(OBJS_A)
+BONUS_OBJS	=$(BONUS:.c=.o)
 
-%.o: %.c $(HEADER_FILE)
-	$(CC) $(FLAGS) -c $< -o $@  -I $(INC_DIR) 
+CC		= gcc
+
+RM		= rm -f
+
+CFLAGS		= -Wall -Wextra -Werror -I.
+
+NAME		= libft.a
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS_A) $(OBJS_B)
+		$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean : clean
-	rm -f $(OUT)
+fclean:		clean
+			$(RM) $(NAME)
 
-re : fclean all
+re:			fclean $(NAME)
 
-bonus: $(OBJS_A) $(OBJS_B) $(OUT) all
-	$(AR) -rcs $(OUT) $(OUT) $(OBJS_B)
+bonus:		$(OBJS) $(BONUS_OBJS)
+			ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY: all clean fclean re bonus
+.PHONY:		all clean fclean re bonus

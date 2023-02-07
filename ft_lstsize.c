@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:12:30 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:12:45 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:18:38 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	unsigned int	size;
+	int	size;
 
 	size = 0;
 	while (lst)
 	{
-		lst = lst->next;
 		size++;
+		lst = lst->next;
 	}
 	return (size);
 }

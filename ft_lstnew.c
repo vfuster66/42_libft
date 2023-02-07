@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:17:15 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 08:09:19 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:17:13 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = (t_list *)malloc(sizeof(t_list));
+	list = malloc(sizeof(t_list));
 	if (!list)
 		return (NULL);
-		list->content = content;
-		list->next = NULL;
-		return (list);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
