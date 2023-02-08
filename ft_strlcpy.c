@@ -6,12 +6,17 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:54:40 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:54:44 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:50:40 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Copie les caracteres de src dans dest jusqu'a atteindre la longueur de src
+ * ou que size -1 caracteres aient ete copies
+ * Retourne la longueur totale de src
+ *
+ **/
 size_t	ft_strlcpy(char *dest, char const *src, size_t size)
 {
 	size_t	src_len;

@@ -6,12 +6,18 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 11:19:52 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/07 10:13:43 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:16:54 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Compare les n 1ers octets des zones memoire s1 et s2
+ * Retourne 0 si les 2 zones sont identiques
+ * Retourne un nombre neg si s1 < s2
+ * Retourne un nompre pos si s1 > s2
+ * 
+ * */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char		*sone;

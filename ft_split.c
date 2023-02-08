@@ -6,12 +6,25 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:19:29 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 17:47:02 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:57:18 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Prend en entree une chaine de caractere str et un caractere de separation c
+ * Renvoie un tableau de chaines de caracteres correspondant aux mots
+ * separes par le caractere c
+ * 1- Determine le nombre de mots dans str
+ * 2- Alloue de la memoire pour le tableau de mots
+ * 3- Determine la longueur des mots suivants
+ * 4- Alloue de la memoire pour chaque mot
+ * 5- Remplit le tableau avec les mots
+ * 6- Renvoie le tableau
+ * Si l'allocation de memoire echoue, la fonction libere toute la memoire
+ * allouee jusqu'a ce point  et renvoie 0
+ *
+ * */
 static int	ft_wordscount(char const *str, char sep)
 {
 	int	i;

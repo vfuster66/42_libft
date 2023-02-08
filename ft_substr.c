@@ -6,12 +6,20 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 10:16:49 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 11:51:09 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:55:56 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Verifie si s est nulle -> NULL dans ce cas
+ * Verifie si la longueur de s < longueur de start -> chaine vide dans ce cas
+ * Alloue de la memoire pour chaine de taille len + 1 pour accueillir la 
+ * sous chaine
+ * Boucle qui copie les caracteres de s a partir de start
+ * Renvoie le pointeur vers la nouvelle chaine
+ *
+ **/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;

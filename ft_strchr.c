@@ -6,14 +6,19 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 08:48:40 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 09:03:33 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 09:25:04 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief renvoie un ponteur sur la 1ere occurrence du caractere c
-/// @brief dans la chaine s
+/* Cherche un caractere c dans une chaine de caracteres s
+ * Renvoie un pointeur vers la 1ere occurence de c dans s
+ * Ou renvoie nul si c non trouve
+ * Parcourt s caractere par caractere jusqu'a ce qu'elle trouve c
+ * ou qu'elle atteigne la fin de la chaine
+ *
+ * */
 char	*ft_strchr(char const *s, int c)
 {
 	char	find;

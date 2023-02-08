@@ -6,12 +6,27 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:28 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 11:57:30 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:05:05 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* fonction qui convertit un entier en chaine de caracteres
+ *
+ * get_size determine la longueur de la chaine de caracteres en calculant
+ * le nombre de chiffres necessaires pour representer l'entier 
+ *
+ * fill_res remplit la chaine de caracters avec les chiffres de l'entier
+ * en utilisant le modulo et la division pour extraire les chiffre 
+ * un par un de gauche a droite
+ *
+ * itoa alloue de la memoire pour la chaine de caracteres resultante
+ * gere les cas speciaux (entier negatif) et remplit la chaine de 
+ * caracteres avec fill_res.
+ * Retourne la chaine de caracteres 
+ *
+ * */
 static int	get_size(int n)
 {
 	int	size;

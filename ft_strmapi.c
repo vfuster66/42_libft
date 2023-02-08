@@ -6,12 +6,20 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:31:02 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 11:49:34 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:55:31 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Transforme les caracteres d'une chaine en utilisant la fonction de rappel f
+ * Verifie si s est nulle -> NULL dans ce cas
+ * Alloue de la memoire pour une nouvelle chaine de taille ft_strlen(s) + 1
+ * Boucle pour iterer a travers s en appelant f pour chaque caractere et
+ * en remplacant le caractere correspondant dans la nouvelle chaine
+ * Renvoie le pointeur vers la nouvelle chaine
+ *
+ **/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

@@ -6,12 +6,26 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:13:00 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 11:52:04 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:56:34 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Fonction qui prend en entree 2 chaines de caracteres s et set
+ * Retourne une nouvelle chaine qui est la copie de s sans les 
+ * caracteres presents dans set en debut et en fin de chaine
+ * Definit 2 variables rear et front pour socker les positions  de fin et
+ * de debut de la nouvelle chaine
+ * Initialise front a 0 et rear a la longueur de la chaine (ft_strlen)
+ * Avance front jusqu'a ce que la valeur du caractere a cette position
+ * ne soit plus dans set (ft_strchr)
+ * Meme chose pour rear en reculant
+ * Alloue de la memoire pour str en specifiant sa taille (rear - front + 1)
+ * Copie sous-chaine de s entre front et rear dans str (ft_strlcpy)
+ * Retourne str
+ *
+ **/
 char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	front;

@@ -6,7 +6,7 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 12:15:39 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/07 13:16:48 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:01:41 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@
  * Si c'est le cas, il est converti en nombre et ajoute au nombre total
  * qui est ensuite multiplie par 10.
  * lorsque la boucle s'arrete, le nombre total est multiplie par le signe 
- * et renvoye en tant que valeur de retour de la fonction */
+ * et renvoye en tant que valeur de retour de la fonction
+ *
+ * */
 int	ft_atoi(char const *nptr)
 {
 	int		i;

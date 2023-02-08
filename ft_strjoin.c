@@ -6,12 +6,20 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:20:18 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:20:21 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 09:42:39 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Concatene 2 chaines de caracteres s1 et s2
+ * Verifie si s1 et s2 sont nuls -> NULL dans ce cas
+ * Alloue de la memoire pour une nouvelle chaine qui contient s1 et s2
+ * Copie s2 dans la nouvelle chaine avec une boucle
+ * Retourne un pointeur vers la nouvelle chaine de caracteres qui doit
+ * etre liberee ulterieurement avec free pour eviter les fuites memoire
+ *
+ **/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;

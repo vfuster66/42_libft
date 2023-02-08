@@ -6,15 +6,20 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:54:25 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/03 10:10:57 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:29:14 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief remplit les n 1ers octets de la zone memoire pointee par s 
-/// @brief avec l'octet c
-/// @return 
+/* Remplit une zone memoire avec un caractere donne
+ * s pointeur vers la zone memoire a remplir, c caractere utilise pour 
+ * remplir la memoire, n taille en octets de la zone a remplir
+ * Utilise une boucle pour iterer n fois et remplir la memoire avec src
+ * a chaque iteration.
+ * Renvoie s une fois la memoire remplie
+ *
+ * */
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*new_dest;

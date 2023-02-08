@@ -6,14 +6,22 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:20:13 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/06 17:44:41 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:55:00 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/// @brief compare les "n" 1ers caracteres de la chaine s1
-/// @brief a la chaine s2
+/* Compare les n 1ers caracteres de s1 et s2
+ * Si n = 0 -> 0 chaines egales
+ * Sinon boucle pour iterer a travers de s1 et s2 jusqu'a ce que n soit
+ * inferieur a 1 ou que l'un des 2 caracteres soien nuls
+ * Si caracteres egaux renvoie 0 -> chaines egales
+ * Sinon renvoie la difference entre les 2 caracteres
+ * Conversion en unsigned char pour eviter des problemes d'interpretation
+ * de la valeur de retour en cas de valeur neg
+ *
+ **/
 int	ft_strncmp(char const *s1, char const *s2, size_t n)
 {
 	if (n == 0)

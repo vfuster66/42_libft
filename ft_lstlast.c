@@ -6,12 +6,17 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:16:46 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 17:16:53 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:06:40 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Prend en entree une liste chainee lst
+ * Renvoie un pointeur sur le dernier element de la liste
+ * Une boucle while parcourt la liste jusqu'a NULL
+ *
+ **/
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)

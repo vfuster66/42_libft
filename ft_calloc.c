@@ -6,12 +6,22 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:13:28 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/07 10:00:04 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:03:20 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* alloue de la memoire et l'initialise a 0
+ * si count ou size sont nuls, ils sont definis a 1 pour eviter 
+ * une division par 0.
+ * ensuite la fonction verifie si count * size est superieur a la taille 
+ * maximale pouvant etre allouee. Si oui -> NULL. Si non -> malloc
+ * Si la memoire ne peut pas etre allouee -> NULL
+ * Enfin on utilise ft_memset pour initialiser cette memoire a 0.
+ * La fonction renvoie le pointeur sur la memoire allouee et initialisee.
+ *
+ * */
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*pnt;

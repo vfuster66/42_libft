@@ -6,12 +6,19 @@
 /*   By: vfuster- <vfuster-@student.42perpignan.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:54:14 by vfuster-          #+#    #+#             */
-/*   Updated: 2023/02/02 11:35:16 by vfuster-         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:26:15 by vfuster-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Copie n octets de src vers dest. Peut gerer les cas ou la src et la
+ * dest se chevauchent
+ * Si dest < src copie en commencant du 1er au dernier octet
+ * Si dest > src copie en commencant du dernier au 1er octet
+ * Retourne un pointeur vers dest
+ *
+ * */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*new_dest;
